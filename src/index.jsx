@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import MainView from "./components/main-view/main-view"; 
+import { MainView } from "./components/main-view/main-view"; 
 import './index.scss';
 
 //Main Component
