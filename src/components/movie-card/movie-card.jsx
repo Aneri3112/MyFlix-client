@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './movie-card.scss';
+
 export class MovieCard extends React.Component {
   render() {
     const { movie, onMovieClick } = this.props;
@@ -14,14 +16,10 @@ MovieCard.propType = {
     Description: PropTypes.string.isRequired,
     Imagepath: PropTypes.string.isRequired,
     Genre: PropTypes.shape({
-      Name: PropTypes.string.isRequired,
-      Description: PropTypes.string.isRequired
+      Name: PropTypes.string.isRequired
     }),
     Director: PropTypes.shape({
-      Name: PropTypes.string.isRequired,
-      Bio:  PropTypes.string.isRequired,
-      Birth: PropTypes.string.isRequired,
-      Death: PropTypes.string.isRequired
+      Name: PropTypes.string.isRequired
     })
   }).isRequired,
   onMovieClick: PropTypes.func.isRequired
