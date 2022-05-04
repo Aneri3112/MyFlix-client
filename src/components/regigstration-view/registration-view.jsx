@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import './registration-view.scss';
+
 //user registration form taking necessary user details
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
