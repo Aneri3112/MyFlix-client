@@ -1,0 +1,55 @@
+$backgroundColor: #020402;
+$textColor: #f1fffa;
+$mainColor: #c42f2f;
+
+:root {
+  --fontsize-movie-title: 30px;
+  --fontweight-movie-title: 600;
+  --fontsize-movie-description: 20px;
+  --fontweight-movie-description: 400;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+#movie-vieww {
+  border-color: $textColor;
+  border-width: 10px;
+  min-height: 300px;
+}
+
+#movie-view-image {
+  margin-bottom: 10px;
+  height: 400px;
+}
+
+#movie-title {
+  text-align: center;
+  font-size: var(--fontsize-movie-title);
+  font-weight: var(--fontweight-movie-title);
+}
+
+#movie-description {
+  font-size: var(--fontsize-movie-description);
+  font-weight: var(--fontweight-movie-description);
+}
+
+#movie-director {
+  font-size: var(--fontsize-movie-description);
+  font-weight: var(--fontweight-movie-description);
+}
+
+#movie-genre {
+  font-size: var(--fontsize-movie-description);
+  font-weight: var(--fontweight-movie-description);
+}
+
+#movie-view-button {
+  margin-top: 10px;
+  color: $textColor;
+  background-color: $mainColor;
+  border: none;
+}
+
