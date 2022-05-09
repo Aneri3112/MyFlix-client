@@ -1,5 +1,22 @@
 
 
+.registration-card {
+  border-radius: 20%;
+}
+
+.cardheader {
+  text-align: center;
+  font-size: 24px;
+}
+
+.form-label {
+  margin-top: 10px;
+}
+
+.register-button {
+  margin-top: 20px;
+}
+
 .login-header {
   text-align: center;
   font-size: 24px;
@@ -91,23 +108,6 @@
   border: none;
   margin-top: 10px;
   margin-bottom: 5px;
-}
-
-.registration-card {
-  border-radius: 20%;
-}
-
-.cardheader {
-  text-align: center;
-  font-size: 24px;
-}
-
-.form-label {
-  margin-top: 10px;
-}
-
-.register-button {
-  margin-top: 20px;
 }
 
 #main-view {
