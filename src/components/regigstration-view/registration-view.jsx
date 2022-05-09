@@ -18,14 +18,14 @@ export function RegistrationView(props) {
 
   return (
     <Container className='login-container'>
-      <Row>
-        <Col md="12">
+      <Row className='justify-content-sm-center'>
+        <Col md={6}>
           <CardGroup>
             <Card className='registration-card'>
               <Card.Body>
-                <Card.Header className='cardheader'>Register for myFlix</Card.Header>
+                <div className='cardheader'>Register for myFlix</div>
                 <Form>
-                  <Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicfirstname">
                     <Form.Label className='form-label'>Username:</Form.Label>
                     <Form.Control type="text" 
                       value={username}
@@ -35,7 +35,7 @@ export function RegistrationView(props) {
                     />
                   </Form.Group>
                   
-                  <Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className='form-label'>Password:</Form.Label>
                     <Form.Control
                       type="password"
@@ -47,7 +47,7 @@ export function RegistrationView(props) {
                     />
                   </Form.Group>  
           
-                  <Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className='form-label'>Email:</Form.Label>
                     <Form.Control
                       type="email"
@@ -58,7 +58,7 @@ export function RegistrationView(props) {
                     />
                   </Form.Group>
 
-                  <Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicBirthdate">
                     <Form.Label className='form-label'>Birthday:</Form.Label>
                     <Form.Control
                       type="date"
@@ -71,7 +71,7 @@ export function RegistrationView(props) {
                   <Button className='register-button' variant='success' type="submit" onClick={handleSubmit}>
                     Submit
                   </Button>
-                </Form>
+                </Form> 
               </Card.Body>
             </Card>
           </CardGroup>
