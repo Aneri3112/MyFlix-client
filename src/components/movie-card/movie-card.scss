@@ -10,11 +10,9 @@ $mainColor: #c42f2f;
   --fontweight-card-button: 400;
 }
 
-* {
-  box-sizing: border-box;
-  font-family: "League Spartan", sans-serif;
-  background-color: $backgroundColor;
-  color: $textColor;
+#card-image {
+  object-fit: 'none';
+  margin-top: '10px';
 }
 
 #card-button {
@@ -23,14 +21,24 @@ $mainColor: #c42f2f;
 }
 
 #movie-card {
-  text-align: center;
-  min-height: 500px;
   margin-bottom: 50px;
-  border-color: $textColor;
   border-width: 10px;
+  gap: 20px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+}
+#movie-card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 
 #card-title {
+  text-align: center;
+  color: $mainColor;
   font-size: var(--fontsize-card-title);
   font-weight: var(--fontweight-card-title);
 }
@@ -39,8 +47,7 @@ $mainColor: #c42f2f;
   font-size: var(--fontsize-card-button);
   font-weight: var(--fontweight-card-button);
   color: $mainColor;
+  text-align: right;
 }
  
-Button:hover {
-  color: $textColor;
-}
+ 
