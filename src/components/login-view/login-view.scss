@@ -1,15 +1,12 @@
 // Login Page Styling
 
-* {
-  box-sizing: border-box;
-  font-family: "League Spartan", sans-serif;
-  background-color: #353535;
-  color: #ffffff;
+
+.login-header {
+  text-align: center;
+  font-size: 24px;
 }
 
 .login-card {
-  margin-top: 100px;
-  margin-bottom: 50px;
   border-radius: 30%;
 }
 

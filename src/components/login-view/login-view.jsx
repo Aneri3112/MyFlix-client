@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Form, Button, Container, Row, Col, CardGroup, Card } from 'react-bootstrap';
 
 import './login-view.scss';
-import CardHeader from 'react-bootstrap/esm/CardHeader';
+
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
@@ -22,21 +22,22 @@ export function LoginView(props) {
   }
 
   return (
-    <Container className='login-container'>
-      <Row>
-        <Col md="12">
+    <Container>
+      <Row className='justify-content-md-center'>
+        <Col md={6}>
           <CardGroup>
             <Card className='login-card'>
               <Card.Body>
+                <Card.Header className='login-header'> Sign in to your account</Card.Header>
                 <Form>
-                  <Form.Group>
+                <Form.Group className="mb-3" controlId="formEmail">
                   <Form.Label>Username:</Form.Label>
                   <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} 
                   required
                   />
                   </Form.Group>
                   
-                  <Form.Group>
+                  <Form.Group className="mb-3" controlId="formPassword">
                   <Form.Label>Password:</Form.Label>
                   <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} 
                   required
