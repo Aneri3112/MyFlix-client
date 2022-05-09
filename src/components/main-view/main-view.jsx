@@ -45,13 +45,14 @@ export class MainView extends React.Component {
   }
 
   onRegistration(register) {
-    this.setState({
+    this.setState ({
       register
     });
   }
 
+
   render() {
-    const { movies, selectedMovie, user, register } = this.state;
+    const { movies, selectedMovie, user, register} = this.state;
 
     if (!register) return (<RegistrationView onRegistration={(register) => this.onRegistration(register)}/>);
 
@@ -64,21 +65,21 @@ export class MainView extends React.Component {
 
     return (
       <Container>
-          <Row className="main-view justify-content-md-center">
-            {selectedMovie
-              ? (
-                <Col md={6}>
-                  <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
-                </Col>
-              ) 
-              : movies.map(movie => (
-                <Col md={4} lg={4}>
-                  <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }} />
-                </Col>
-              ))
-            }
-          </Row>
-      </Container>
+        <Row className="main-view justify-content-md-center">
+          {selectedMovie
+            ? (
+              <Col md={6}>
+                <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+              </Col>
+            ) 
+            : movies.map(movie => (
+              <Col lg={4} md={6}>
+                <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie) }} />
+              </Col>
+            ))
+          }
+        </Row>
+      </Container>  
     ); 
   }
 } 
