@@ -23,7 +23,7 @@ export function RegistrationView(props) {
           <CardGroup>
             <Card className='registration-card'>
               <Card.Body>
-                <div className='cardheader'>Register for myFlix</div>
+                <Card.Header className='cardheader'>Register for myFlix</Card.Header>
                 <Form>
                 <Form.Group className="mb-3" controlId="formBasicfirstname">
                     <Form.Label className='form-label'>Username:</Form.Label>

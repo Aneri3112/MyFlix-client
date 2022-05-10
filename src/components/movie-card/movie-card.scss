@@ -3,8 +3,8 @@ $textColor: #f1fffa;
 $mainColor: #c42f2f;
 
 :root {
-  --fontsize-card-title: 20px;
-  --fontweight-card-title: 600;
+  --fontsize-card-title: 18px;
+  --fontweight-card-title: 500;
   --fontsize-card-button: 15px;
   --fontweight-card-button: 400;
 }
@@ -20,9 +20,9 @@ $mainColor: #c42f2f;
 }
 
 #movie-card {
-  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 20px;
   border-width: 10px;
-  gap: 20px;
   border-radius: 4px;
   background: #fff;
   box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
@@ -40,6 +40,10 @@ $mainColor: #c42f2f;
   color: $mainColor;
   font-size: var(--fontsize-card-title);
   font-weight: var(--fontweight-card-title);
+}
+
+#card-description {
+  max-width: 250;
 }
 
 #card-button {
