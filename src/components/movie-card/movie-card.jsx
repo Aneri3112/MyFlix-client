@@ -11,11 +11,11 @@ export class MovieCard extends React.Component {
       
       <CardGroup id='movie-cardgroup'>
         <Card id='movie-card' className='cards'>
-          <Card.Img id='card-image' variant='top' src={movie.Imagepath} />
-          <Card.Body>
+          <Card.Body>  
+            <Card.Img id='card-image' variant='top' src={movie.Imagepath} />
             <Card.Title id='card-title'>{movie.Title}</Card.Title>
             <Card.Text className='d-block text-truncate' id='card-description'>{movie.Description}</Card.Text>
-            <Button id='card-button' onClick={() => onMovieClick(movie)} variant='link'> More Detail</Button>
+            <Button className='justiff-content-end' id='card-button' onClick={() => onMovieClick(movie)} variant='link'> More Detail</Button>
           </Card.Body>
         </Card>
       </CardGroup>
