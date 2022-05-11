@@ -35942,54 +35942,53 @@ class MovieCard extends _reactDefault.default.Component {
             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card, {
                 id: "movie-card",
                 className: "cards",
-                children: [
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Img, {
-                        id: "card-image",
-                        variant: "top",
-                        src: movie.Imagepath
-                    }, void 0, false, {
-                        fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 14,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Body, {
-                        children: [
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Title, {
-                                id: "card-title",
-                                children: movie.Title
-                            }, void 0, false, {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 16,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
-                                className: "d-block text-truncate",
-                                id: "card-description",
-                                children: movie.Description
-                            }, void 0, false, {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 17,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
-                                id: "card-button",
-                                onClick: ()=>onMovieClick(movie)
-                                ,
-                                variant: "link",
-                                children: " More Detail"
-                            }, void 0, false, {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 18,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 15,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, void 0, true, {
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Body, {
+                    children: [
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Img, {
+                            id: "card-image",
+                            variant: "top",
+                            src: movie.Imagepath
+                        }, void 0, false, {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 15,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Title, {
+                            id: "card-title",
+                            children: movie.Title
+                        }, void 0, false, {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 16,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Text, {
+                            className: "d-block text-truncate",
+                            id: "card-description",
+                            children: movie.Description
+                        }, void 0, false, {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 17,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
+                            className: "justiff-content-end",
+                            id: "card-button",
+                            onClick: ()=>onMovieClick(movie)
+                            ,
+                            variant: "link",
+                            children: " More Detail"
+                        }, void 0, false, {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 18,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-card/movie-card.jsx",
+                    lineNumber: 14,
+                    columnNumber: 11
+                }, this)
+            }, void 0, false, {
                 fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 13,
                 columnNumber: 9
