@@ -15,11 +15,12 @@ $mainColor: #c42f2f;
   margin-top: 30px;
 }
 
-.movie-title {
+#movie-title {
   text-align: center;
   text-decoration: underline ;
   font-size: var(--fontsize-movie-title);
   font-weight: var(--fontweight-movie-title);
+  color: $mainColor;
 }
 
 #movie-description {
