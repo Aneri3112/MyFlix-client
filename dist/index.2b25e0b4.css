@@ -61,17 +61,18 @@
   color: #c42f2f;
   font-size: var(--fontsize-card-title);
   font-weight: var(--fontweight-card-title);
+  margin-top: 10px;
 }
 
 #card-description {
   max-width: 250px;
+  text-decoration: none;
 }
 
 #card-button {
   font-size: var(--fontsize-card-button);
   font-weight: var(--fontweight-card-button);
   color: #c42f2f;
-  text-align: right;
 }
 
 :root {
@@ -87,10 +88,11 @@
   margin-top: 30px;
 }
 
-.movie-title {
+#movie-title {
   text-align: center;
   font-size: var(--fontsize-movie-title);
   font-weight: var(--fontweight-movie-title);
+  color: #c42f2f;
   text-decoration: underline;
 }
 
@@ -109,6 +111,67 @@
 
 #navbrand {
   color: #c42f2f;
+}
+
+#header-link {
+  color: #fff;
+}
+
+#genre-card {
+  border-width: 10px;
+  border-color: #000;
+  margin-top: 200px;
+}
+
+#genre-title {
+  text-align: center;
+  color: #c42f2f;
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+#genre-description {
+  margin-top: 20px;
+}
+
+#director-card {
+  border-width: 10px;
+  border-color: #000;
+  margin-top: 100px;
+}
+
+#director-header {
+  text-align: center;
+  color: #c42f2f;
+  font-size: 24px;
+}
+
+#director-name {
+  margin-top: 20px;
+}
+
+#profile-card {
+  border-width: 10px;
+  margin-top: 50px;
+}
+
+#profile-header {
+  text-align: center;
+  font-size: 24px;
+}
+
+#favourite-card {
+  border-width: 10px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+#user-header {
+  font-size: 22px;
+}
+
+#user-favmovie-card {
+  margin-top: 15px;
 }
 
 #main-view {
