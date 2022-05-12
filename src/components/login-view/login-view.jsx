@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+
 import { Form, Button, Container, Row, Col, CardGroup, Card } from 'react-bootstrap';
 
 import './login-view.scss';
@@ -8,18 +10,49 @@ export function LoginView(props) {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
 
+  //Declare hook 
+  const [ usernameErr, setUsernameErr ] = useState('');
+  const [ passwordErr, setPasswordErr ] = useState('');
+ 
+  const validate = () => {
+    let isReq = true;
+    if(!username){
+     setUsernameErr('Username Required');
+     isReq = false;
+    }else if(username.length < 2){
+     setUsernameErr('Username must be 2 characters long');
+     isReq = false;
+    }
+    if(!password){
+     setPasswordErr('Password Required');
+     isReq = false;
+    }else if(password.length < 6){
+     setPassword('Password must be 6 characters long');
+     isReq = false;
+    }
+
+    return isReq;
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password);
-    /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(username) */
-    props.onLoggedIn(username);
+    const isReq = validate();
+    if (isReq) {
+      /* Send a request to the server for authentication */
+      axios.post('https://movie-api3112.herokuapp.com/login', {
+        Username: username,
+        Password: password
+      })
+      .then(response => {
+        const data = response.data;
+        props.onLoggedIn(data); 
+      })
+      .catch(response => {
+        console.log('response');
+        alert('something wasn\'t entered correct');
+      })
+    } 
   };
-
-  const handleRegister = (e) => {
-    e.preventDefault()
-    props.onRegistration(true)
-  }
 
   return (
     <Container>
@@ -35,6 +68,7 @@ export function LoginView(props) {
                   <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} 
                   required
                   />
+                  {usernameErr && <p>{usernameErr}</p>}
                   </Form.Group>
                   
                   <Form.Group className="mb-3" controlId="formPassword">
@@ -42,10 +76,10 @@ export function LoginView(props) {
                   <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} 
                   required
                   />
+                  {passwordErr && <p>{passwordErr}</p>}
                   </Form.Group>
 
                   <Button className='login-button' variant='success' type="submit" onClick={handleSubmit}>Submit</Button><br />
-                  <Button className='register-button' variant='success' type='submit' onClick={handleRegister}> Register Your Account</Button>
                 </Form>
               </Card.Body>
             </Card>
@@ -56,7 +90,3 @@ export function LoginView(props) {
    
   );
 }
-
-LoginView.propTypes = {
-  onLoggedIn: PropTypes.func.isRequired,
-};
