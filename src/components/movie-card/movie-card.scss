@@ -36,17 +36,18 @@ $mainColor: #c42f2f;
   color: $mainColor;
   font-size: var(--fontsize-card-title);
   font-weight: var(--fontweight-card-title);
+  margin-top: 10px;
 }
 
 #card-description {
   max-width: 250;
+  text-decoration: none;
 }
 
 #card-button {
   font-size: var(--fontsize-card-button);
   font-weight: var(--fontweight-card-button);
   color: $mainColor;
-  text-align: right;
 }
  
  
