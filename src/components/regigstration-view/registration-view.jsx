@@ -1,19 +1,73 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 import { Container, Row, Col, CardGroup, Card, Form, Button } from 'react-bootstrap';
+
 import './registration-view.scss';
 
 //user registration form taking necessary user details
 export function RegistrationView(props) {
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
 
+  //Declare hook 
+  const [usernameErr, setUsernameErr] = useState('');
+  const [passwordErr, setPasswordErr] = useState('');
+  const [emailErr, setEmailErr] = useState('');
+
+  const validate = () => {
+    let isReq = true; 
+    if(!username){
+      setUsernameErr('Create Username');
+      isReq = false; 
+    } else if(username.length < 5){
+      setUsernameErr('Username must be 5 characters long');
+      isReq = false;
+    }
+    if(!password){
+      setPasswordErr('Create Password(Min 6 characters)');
+      isReq=false;
+    }else if (password.length < 6){
+      setPasswordErr('Password must be 6 characters long');
+      isReq=false;
+    }
+    if(!email){
+      setEmailErr('Add Email');
+      isReq = false;
+    } else if(email.indexOf('@') === -1){
+      setEmail('Invalid Email');
+      isReq = false; 
+    }
+   
+    return isReq;
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password, email, birthday);
-    props.onRegistration(username);
+    const isReq = validate();
+    if (isReq) {
+      axios.post('https://movie-api3112.herokuapp.com/users', {
+        Username: username, 
+        Password: password, 
+        Email: email, 
+        Birthday: birthday
+      })
+      .then(response => {
+        const data = response.data;
+        console.log(data);
+        alert('Success! Please Login')
+        window.open('/', '_self');
+      })
+      .catch(response => {
+        console.error(response);
+        alert('Something wasn\'t entered correctly');
+      });
+    }
   };
 
   return (
@@ -33,6 +87,7 @@ export function RegistrationView(props) {
                       placeholder='Enter Username'
                       required
                     />
+                    {usernameErr && <p>{usernameErr}</p>}
                   </Form.Group>
                   
                   <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -45,6 +100,7 @@ export function RegistrationView(props) {
                       required
                       minLength="8" 
                     />
+                    {passwordErr && <p>{passwordErr}</p>}
                   </Form.Group>  
           
                   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -56,6 +112,7 @@ export function RegistrationView(props) {
                       placeholder='Enter your email address'
                       required
                     />
+                     {emailErr && <p>{emailErr}</p>}
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formBasicBirthdate">
@@ -71,6 +128,8 @@ export function RegistrationView(props) {
                   <Button className='register-button' variant='success' type="submit" onClick={handleSubmit}>
                     Submit
                   </Button>
+                  <p></p>
+                  <p>Already registered <Link to={'/'}>Sign In</Link> here</p>
                 </Form> 
               </Card.Body>
             </Card>
@@ -78,7 +137,6 @@ export function RegistrationView(props) {
         </Col>
       </Row>
     </Container>
-    
   );
 }
 
@@ -88,6 +146,5 @@ RegistrationView.propTypes = {
     Password: PropTypes.string.isRequired,
     Email: PropTypes.string.isRequired,
     Birthday: PropTypes.string.isRequired,
-  }),
-  onRegistration: PropTypes.func.isRequired,
+  })
 };
