@@ -20,14 +20,14 @@ export function LoginView(props) {
      setUsernameErr('Username Required');
      isReq = false;
     }else if(username.length < 2){
-     setUsernameErr('Username must be 2 characters long');
+     setUsernameErr('Incorrect Username');
      isReq = false;
     }
     if(!password){
      setPasswordErr('Password Required');
      isReq = false;
     }else if(password.length < 6){
-     setPassword('Password must be 6 characters long');
+     setPassword('Incorrect Password');
      isReq = false;
     }
 
@@ -49,7 +49,7 @@ export function LoginView(props) {
       })
       .catch(response => {
         console.log('response');
-        alert('something wasn\'t entered correct');
+        alert('No such User');
       })
     } 
   };
