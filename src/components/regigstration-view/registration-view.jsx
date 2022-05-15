@@ -87,7 +87,6 @@ export function RegistrationView(props) {
                 <Form.Group className="mb-3" controlId="formBasicfirstname">
                     <Form.Label className='form-label'>Username:</Form.Label>
                     <Form.Control type="text" 
-                      value={username}
                       onChange={(e) => setUsername(e.target.value)}
                       placeholder='Enter Username(must be 5 character long)'
                       required
@@ -99,7 +98,6 @@ export function RegistrationView(props) {
                     <Form.Label className='form-label'>Password:</Form.Label>
                     <Form.Control
                       type="password"
-                      value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder='Password must be 6 characters long'
                       required
@@ -112,7 +110,6 @@ export function RegistrationView(props) {
                     <Form.Label className='form-label'>Email:</Form.Label>
                     <Form.Control
                       type="email"
-                      value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder='Please enter valid Email Address(abc@gmail.com)'
                       required
@@ -124,7 +121,6 @@ export function RegistrationView(props) {
                     <Form.Label className='form-label'>Birthday:</Form.Label>
                     <Form.Control
                       type="date"
-                      value={birthday}
                       onChange={(e) => setBirthday(e.target.value)}
                       required
                     />

@@ -150,6 +150,16 @@
   margin-top: 20px;
 }
 
+#your-info {
+  border-width: 10px;
+  margin-top: 40px;
+}
+
+#info-header {
+  text-align: center;
+  font-size: 24px;
+}
+
 #profile-card {
   border-width: 10px;
   margin-top: 50px;
