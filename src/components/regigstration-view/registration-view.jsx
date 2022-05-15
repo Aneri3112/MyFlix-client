@@ -19,30 +19,35 @@ export function RegistrationView(props) {
   const [usernameErr, setUsernameErr] = useState('');
   const [passwordErr, setPasswordErr] = useState('');
   const [emailErr, setEmailErr] = useState('');
+  const [birthdayErr, setbirthdayErr] = useState('');
 
   const validate = () => {
     let isReq = true; 
     if(!username){
-      setUsernameErr('Create Username');
+      setUsernameErr('Username Required');
       isReq = false; 
     } else if(username.length < 5){
       setUsernameErr('Username must be 5 characters long');
       isReq = false;
     }
     if(!password){
-      setPasswordErr('Create Password(Min 6 characters)');
+      setPasswordErr('Password Required');
       isReq=false;
     }else if (password.length < 6){
       setPasswordErr('Password must be 6 characters long');
       isReq=false;
     }
     if(!email){
-      setEmailErr('Add Email');
+      setEmailErr('Please enter valid Email Address');
       isReq = false;
     } else if(email.indexOf('@') === -1){
       setEmail('Invalid Email');
       isReq = false; 
     }
+    if(!birthday){
+      setbirthdayErr('Please enter birthdate');
+      isReq = false;
+    } 
    
     return isReq;
   }
@@ -78,13 +83,13 @@ export function RegistrationView(props) {
             <Card className='registration-card'>
               <Card.Body>
                 <Card.Header className='cardheader'>Register for myFlix</Card.Header>
-                <Form>
+                <Form className='has-validation'>
                 <Form.Group className="mb-3" controlId="formBasicfirstname">
                     <Form.Label className='form-label'>Username:</Form.Label>
                     <Form.Control type="text" 
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
-                      placeholder='Enter Username'
+                      placeholder='Enter Username(must be 5 character long)'
                       required
                     />
                     {usernameErr && <p>{usernameErr}</p>}
@@ -96,7 +101,7 @@ export function RegistrationView(props) {
                       type="password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      placeholder='Enter Password'
+                      placeholder='Password must be 6 characters long'
                       required
                       minLength="8" 
                     />
@@ -109,7 +114,7 @@ export function RegistrationView(props) {
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder='Enter your email address'
+                      placeholder='Please enter valid Email Address(abc@gmail.com)'
                       required
                     />
                      {emailErr && <p>{emailErr}</p>}
@@ -123,6 +128,7 @@ export function RegistrationView(props) {
                       onChange={(e) => setBirthday(e.target.value)}
                       required
                     />
+                     {birthdayErr && <p>{birthdayErr}</p>}
                   </Form.Group>
 
                   <Button className='register-button' variant='success' type="submit" onClick={handleSubmit}>
