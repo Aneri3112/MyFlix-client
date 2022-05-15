@@ -82,13 +82,12 @@ export class ProfileView extends React.Component {
 
         localStorage.setItem('user', this.state.Username);
         alert("Profile updated");
-        window.open('/profile', '_self');
+        window.open(`/user/${user}`, '_self');
       })
       .catch(function (error) {
         console.log(error);
       });
   };
-
   onRemoveFavorite = (e, movie) => {
     e.preventDefault();
     const Username = localStorage.getItem('user');
@@ -157,7 +156,7 @@ export class ProfileView extends React.Component {
 
   render() {
     const { movies, onBackClick } = this.props;
-    const { FavouriteMovies, Username, Password, Email, Birthday } = this.state;
+    const { FavouriteMovies, Username, Email, Birthday } = this.state;
 
     if (!Username) {
       return null;
@@ -197,7 +196,7 @@ export class ProfileView extends React.Component {
                       type="password"
                       name="Password"
                       placeholder="New Password"
-                      value={Password}
+                      value=""
                       onChange={(e) => this.setPassword(e.target.value)}
                       required
                     />
@@ -206,7 +205,7 @@ export class ProfileView extends React.Component {
                   <Form.Group>
                     <Form.Label>Email</Form.Label>
                     <Form.Control
-                      type="email"
+                      field="email"
                       name="Email"
                       placeholder="Enter Email"
                       value={Email}
@@ -218,7 +217,7 @@ export class ProfileView extends React.Component {
                   <Form.Group>
                     <Form.Label>Birthday</Form.Label>
                     <Form.Control
-                      type="full-date"
+                      field="date"
                       name="Birthday"
                       value={Birthday}
                       onChange={(e) => this.setBirthday(e.target.value)}
