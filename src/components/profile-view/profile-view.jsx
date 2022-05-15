@@ -3,8 +3,8 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import './profile-view.scss';
 
-import { Link } from 'react-router-dom';
-import { Container, Card, Button, Row, Col, Form } from 'react-bootstrap';
+import { Link } from "react-router-dom";
+import { Container, Card, Button, Row, Col, Form, FormControl, FormGroup } from 'react-bootstrap';
 
 
 export class ProfileView extends React.Component {
@@ -35,9 +35,9 @@ export class ProfileView extends React.Component {
   }
 
   getUser = (token) => {
-    const Username = localStorage.getItem('user');
+    const user = localStorage.getItem('user');
     axios
-      .get(`https://movie-api3112.herokuapp.com/users/${Username}`, {
+      .get(`https://movie-api3112.herokuapp.com/users/${user}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -56,12 +56,14 @@ export class ProfileView extends React.Component {
 
   editUser = (e) => {
     e.preventDefault();
-    const Username = localStorage.getItem('user');
+    const user = localStorage.getItem('user');
     const token = localStorage.getItem('token');
+    let newUser = this.state.Username;
+    console.log(newUser);
 
     axios
       .put(
-        `https://movie-api3112.herokuapp.com/users/${Username}`,
+        `https://movie-api3112.herokuapp.com/users/${user}`,
         {
           Username: this.state.Username,
           Password: this.state.Password,
@@ -82,11 +84,8 @@ export class ProfileView extends React.Component {
 
         localStorage.setItem('user', this.state.Username);
         alert("Profile updated");
-        window.open(`/user/${user}`, '_self');
+        window.open(`/users/${newUser}`, '_self');
       })
-      .catch(function (error) {
-        console.log(error);
-      });
   };
   onRemoveFavorite = (e, movie) => {
     e.preventDefault();
@@ -156,19 +155,29 @@ export class ProfileView extends React.Component {
 
   render() {
     const { movies, onBackClick } = this.props;
-    const { FavouriteMovies, Username, Email, Birthday } = this.state;
+    const { FavouriteMovies, Username, Password, Email, Birthday } = this.state;
 
     if (!Username) {
       return null;
     }
 
     return (
+    <>  
+      <Container>
+        <Card id='your-info'>
+          <Card.Body>
+            <Card.Header id='info-header'>Your Info</Card.Header>
+            <Card.Text>Name: {Username}</Card.Text>
+            <Card.Text>Email: {Email}</Card.Text>
+          </Card.Body>                    
+        </Card>
+      </Container>
       <Container className="profile-view" >
         <Row>
           <Col>
             <Card className="update-profile" id='profile-card'>
               <Card.Body>
-                <Card.Header id='profile-header'>Profile</Card.Header>
+                <Card.Header id='profile-header'>Profile</Card.Header>                
                 <Form className="update-form" onSubmit={(e) =>
                   this.editUser(
                     e,
@@ -180,49 +189,55 @@ export class ProfileView extends React.Component {
 
                   <Form.Group>
                     <Form.Label>Username</Form.Label>
-                    <Form.Control
+                    <FormControl
                       type="text"
                       name="Username"
-                      placeholder="New Username"
-                      value={Username}
+                      placeholder="Enter your new username"
                       onChange={(e) => this.setUsername(e.target.value)}
                       required
                     />
-                  </Form.Group>
+                    <Form.Text className="text-muted">
+                      Your username should be at least 5 characters long
+                    </Form.Text>
+                   </Form.Group>
 
-                  <Form.Group>
+                  <FormGroup>
                     <Form.Label>Password</Form.Label>
-                    <Form.Control
-                      type="password"
-                      name="Password"
-                      placeholder="New Password"
-                      value=""
-                      onChange={(e) => this.setPassword(e.target.value)}
-                      required
-                    />
-                  </Form.Group>
+                      <FormControl
+                        type="text"
+                        name="Password"
+                        placeholder="Enter your new password"
+                        onChange={(e) => this.setPassword(e.target.value)}
+                        required
+                      />
+                      <Form.Text className="text-muted">
+                        Your password should be atleast 8 characters long
+                      </Form.Text>
+                  </FormGroup>
 
-                  <Form.Group>
+                  <FormGroup>
                     <Form.Label>Email</Form.Label>
-                    <Form.Control
-                      field="email"
+                    <FormControl
+                      type="email"
                       name="Email"
-                      placeholder="Enter Email"
-                      value={Email}
+                      placeholder="Enter your new email"
                       onChange={(e) => this.setEmail(e.target.value)}
                       required
                     />
-                  </Form.Group>
+                  </FormGroup>
 
-                  <Form.Group>
-                    <Form.Label>Birthday</Form.Label>
-                    <Form.Control
-                      field="date"
+                  <FormGroup>
+                    <Form.Label>Birthdate</Form.Label>
+                    <FormControl
+                      type="date"
                       name="Birthday"
-                      value={Birthday}
+                      placeholder="Enter your new email"
                       onChange={(e) => this.setBirthday(e.target.value)}
+                      required
                     />
-                  </Form.Group>
+                  </FormGroup>
+
+              
                   <p></p>
                   <Container  className="d-flex justify-content-between">
                     <Button variant="dark" type="submit" onClick={this.editUser}>Update User</Button>
@@ -274,6 +289,7 @@ export class ProfileView extends React.Component {
           <Button variant="dark" onClick={() => { onBackClick(null); }}>Back</Button>
         </Card>
       </Container>
+      </>
     );
   }
 }
