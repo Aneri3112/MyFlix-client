@@ -111,6 +111,7 @@
 
 #navbrand {
   color: #c42f2f;
+  font-size: 28px;
 }
 
 #header-link {
@@ -148,6 +149,16 @@
 
 #director-name {
   margin-top: 20px;
+}
+
+#your-info {
+  border-width: 10px;
+  margin-top: 40px;
+}
+
+#info-header {
+  text-align: center;
+  font-size: 24px;
 }
 
 #profile-card {
