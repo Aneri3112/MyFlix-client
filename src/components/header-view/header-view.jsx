@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Container, Navbar, Nav, Button } from "react-bootstrap";
+import { Container, Navbar, Nav } from "react-bootstrap";
 import './header-view.scss';
 
 export function HeaderView({ user }) {
@@ -33,7 +32,7 @@ export function HeaderView({ user }) {
                 <Nav.Link id="header-link" href={`/users/${user}`}>{user}</Nav.Link>
               )}
               {isAuth() && (
-                <Button className="justify-content-end" variant="dark" onClick={() => { onLoggedOut() }}>Logout</Button>
+                <Nav.Link id="header-link" onClick={() => { onLoggedOut() }}>Logout</Nav.Link>
               )}
               {!isAuth() && (
                 <Nav.Link id="header-link" href="/">Sign-in</Nav.Link>
