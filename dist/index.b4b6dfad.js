@@ -25356,8 +25356,7 @@ let mapStateToprops = (state)=>{
 exports.default = _reactRedux.connect(mapStateToprops, {
     setMovies: _actions.setMovies,
     setUser: _actions.setUser,
-    setUserData: _actions.setUserData,
-    getToken: _actions.getToken
+    setUserData: _actions.setUserData
 })(MainView); /*render() {
     const { movies, user } = this.state;
 
@@ -42170,12 +42169,6 @@ function userData(state = "", action) {
             return state;
     }
 }
-// function getToken (state = '', action) {
-//   switch(action.type){
-//     case GET_TOKEN:
-//       return localStorage.getItem("token");
-//   }
-// }
 const moviesApp = _redux.combineReducers({
     visibilityFilter,
     movies,
