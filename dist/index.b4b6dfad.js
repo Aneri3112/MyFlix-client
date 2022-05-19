@@ -40760,8 +40760,7 @@ class MovieCard extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Img, {
                             id: "card-image",
                             variant: "top",
-                            src: movie.Imagepath,
-                            className: "img-responsive"
+                            src: movie.Imagepath
                         }, void 0, false, {
                             fileName: "src/components/movie-card/movie-card.jsx",
                             lineNumber: 17,
