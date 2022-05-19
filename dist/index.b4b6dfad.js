@@ -41475,6 +41475,7 @@ function MoviesList(props) {
         children: [
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
                 md: 12,
+                xs: 8,
                 style: {
                     margin: '1em'
                 },
