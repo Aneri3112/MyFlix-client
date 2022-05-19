@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import { ADD_FAVMOVIES, REM_FAVMOVIES, SET_FILTER, SET_MOVIES, SET_USER, SET_USERDATA, GET_TOKEN } from "../actions/actions";
+import { ADD_FAVMOVIES, REM_FAVMOVIES, SET_FILTER, SET_MOVIES, SET_USER, SET_USERDATA } from "../actions/actions";
 
 function visibilityFilter(state = '', action) {
   switch (action.type) {
@@ -42,13 +42,6 @@ function userData(state = "", action) {
       return state;
   }
 }
-
-// function getToken (state = '', action) {
-//   switch(action.type){
-//     case GET_TOKEN:
-//       return localStorage.getItem("token");
-//   }
-// }
 
 const moviesApp = combineReducers ({
   visibilityFilter,

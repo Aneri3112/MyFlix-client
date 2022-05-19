@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
-import { setMovies, setUser, setUserData, getToken } from '../../actions/actions';
+import { setMovies, setUser, setUserData } from '../../actions/actions';
 import  MoviesList from '../movies-list/movies-list';
 
 import { Row, Col, Container  } from 'react-bootstrap';
@@ -165,7 +165,7 @@ class MainView extends React.Component {
 let mapStateToprops = state => {
   return { movies: state.movies, user: state.user, userData: state.userData }
 }
-export default connect(mapStateToprops, { setMovies, setUser, setUserData, getToken }) (MainView);
+export default connect(mapStateToprops, { setMovies, setUser, setUserData }) (MainView);
   /*render() {
     const { movies, user } = this.state;
 
