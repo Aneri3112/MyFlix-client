@@ -1,6 +1,6 @@
 # myFlix-client
 
-# [![Netlify Status](https://api.netlify.com/api/v1/badges/cd04b8a9-7a91-495e-8b29-f33e8feea4e8/deploy-status)](https://app.netlify.com/sites/myflixspecial/deploys)
+# [![Netlify Status](https://api.netlify.com/api/v1/badges/ad378fe0-d383-42be-a7a7-ad24dbe09075/deploy-status)](https://app.netlify.com/sites/cheery-gaufre-23d722/deploys)
 
 ## Description
 
