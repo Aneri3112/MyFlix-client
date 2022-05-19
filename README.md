@@ -1,5 +1,7 @@
 # myFlix-client
 
+# [![Netlify Status](https://api.netlify.com/api/v1/badges/cd04b8a9-7a91-495e-8b29-f33e8feea4e8/deploy-status)](https://app.netlify.com/sites/myflixspecial/deploys)
+
 ## Description
 
 The project is used to build client-side using React for the myFlix application on it's existing server-side code.
