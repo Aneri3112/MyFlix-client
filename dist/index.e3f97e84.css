@@ -1,0 +1,194 @@
+:root {
+  --fontsize-card-title: 18px;
+  --fontweight-card-title: 500;
+  --fontsize-card-button: 15px;
+  --fontweight-card-button: 400;
+}
+
+#card-button {
+  color: #f1fffa;
+  margin: auto;
+}
+
+#movie-card {
+  cursor: pointer;
+  background: #fff;
+  border-width: 10px;
+  border-radius: 4px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 14px 20px 10px;
+  transition: transform .3s cubic-bezier(.155, 1.105, .295, 1.12), box-shadow .3s, -webkit-transform .3s cubic-bezier(.155, 1.105, .295, 1.12);
+  box-shadow: 0 6px 10px #00000014, 0 0 6px #0000000d;
+}
+
+#card-title {
+  text-align: center;
+  color: #c42f2f;
+  font-size: var(--fontsize-card-title);
+  font-weight: var(--fontweight-card-title);
+  margin-top: 10px;
+}
+
+#card-description {
+  max-width: 250px;
+  text-decoration: none;
+}
+
+#card-button {
+  font-size: var(--fontsize-card-button);
+  font-weight: var(--fontweight-card-button);
+  color: #c42f2f;
+}
+
+
+
+
+
+.registration-card {
+  border-radius: 20%;
+  margin-top: 150px;
+}
+
+.cardheader {
+  text-align: center;
+  font-size: 24px;
+}
+
+.form-label {
+  margin-top: 10px;
+}
+
+.register-button {
+  margin-top: 20px;
+}
+
+.login-header {
+  text-align: center;
+  font-size: 24px;
+}
+
+.login-card {
+  border-radius: 30%;
+  margin-top: 150px;
+}
+
+.login-button, .register-button {
+  margin-top: 20px;
+}
+
+:root {
+  --fontsize-movie-title: 30px;
+  --fontweight-movie-title: 600;
+  --fontsize-movie-description: 20px;
+  --fontweight-movie-description: 400;
+}
+
+#movie-vieww {
+  border-width: 10px;
+  border-color: #020402;
+  margin-top: 30px;
+}
+
+#movie-title {
+  text-align: center;
+  font-size: var(--fontsize-movie-title);
+  font-weight: var(--fontweight-movie-title);
+  color: #c42f2f;
+  text-decoration: underline;
+}
+
+#movie-description, #movie-director, #movie-genre {
+  font-size: var(--fontsize-movie-description);
+  font-weight: var(--fontweight-movie-description);
+}
+
+#movie-view-button {
+  color: #f1fffa;
+  background-color: #020402;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#navbrand {
+  color: #c42f2f;
+  font-size: 28px;
+}
+
+#header-link {
+  color: #fff;
+}
+
+#genre-card {
+  border-width: 10px;
+  border-color: #000;
+  margin-top: 200px;
+}
+
+#genre-title {
+  text-align: center;
+  color: #c42f2f;
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+#genre-description {
+  margin-top: 20px;
+}
+
+#director-card {
+  border-width: 10px;
+  border-color: #000;
+  margin-top: 100px;
+}
+
+#director-header {
+  text-align: center;
+  color: #c42f2f;
+  font-size: 24px;
+}
+
+#director-name {
+  margin-top: 20px;
+}
+
+#your-info {
+  border-width: 10px;
+  margin-top: 40px;
+}
+
+#info-header {
+  text-align: center;
+  font-size: 24px;
+}
+
+#profile-card {
+  border-width: 10px;
+  margin-top: 50px;
+}
+
+#profile-header {
+  text-align: center;
+  font-size: 24px;
+}
+
+#favourite-card {
+  border-width: 10px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+#user-header {
+  font-size: 22px;
+}
+
+#user-favmovie-card {
+  margin-top: 15px;
+}
+
+#main-view {
+  margin: 30px;
+}
+
+/*# sourceMappingURL=index.e3f97e84.css.map */
