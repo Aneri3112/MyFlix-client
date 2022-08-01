@@ -69,3 +69,11 @@ The project is used to build client-side using React for the myFlix application 
 ### Connect to database via axios
 
 - Get data on movies and users from API using axios library
+
+# App / Livepage
+
+- [Link to Livepage]https://myflix-special.netlify.app)
+
+Livepage after successfully registrationn/log-in:
+
+- ![Livepage](./src/img/myFlix_client.png)
