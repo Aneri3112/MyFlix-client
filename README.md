@@ -72,8 +72,8 @@ The project is used to build client-side using React for the myFlix application 
 
 # App / Livepage
 
-- [Link to Livepage]https://myflix-special.netlify.app)
+[Link to Livepage](https://myflix-special.netlify.app)
 
-Livepage after successfully registrationn/log-in:
+-Livepage after successfully registrationn/log-in:
 
-- ![Livepage](./src/img/myFlix_client.png)
+![Livepage](./src/img/myFlix_client.png)
