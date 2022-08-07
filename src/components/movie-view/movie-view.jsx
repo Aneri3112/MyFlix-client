@@ -47,7 +47,7 @@ export class MovieView extends React.Component {
     let isFav = userFavorites.includes(id);
     
     if (!isFav) {
-    axios.patch(
+    axios.post(
       `https://movie-api3112.herokuapp.com/users/${Username}/movies/${movie._id}`,
       {
         FavouriteMovies: this.state.FavouriteMovies
